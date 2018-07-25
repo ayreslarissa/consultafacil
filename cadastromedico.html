@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<?php
+require_once 'bdconection.php';
+$query = mysql_query("SELECT id,nome FROM especialidade");
+?>
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Cadastro de Médicos</title>
+
+	<link rel="stylesheet" href="assets/demo.css">
+	<link rel="stylesheet" href="assets/form-login.css">
+
+</head>
+
+<body>
+	
+	<header class="masthead text-white text-center">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <h1 class="mb-5">Área de cadastro de médicos</h1>
+        </div>
+     </header>
+	
+    <div class="main-content">
+
+        <!-- You only need this form and the form-login.css -->
+
+        <form class="form-login" method="post" action="#">
+
+            <div class="form-log-in-with-email">
+
+                <div class="form-white-background">
+                 
+                    <div class="form-row">
+                        <label>
+                            <span>Nome</span>
+                            <input type="email" name="email">
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            <span>CRM</span>
+                            <input type="text" name="text">
+                        </label>
+                    </div>
+                    <div class="form-row">
+                        <label>
+                            <span>Especialidade</span>
+                            <select>
+                            	<option selected>Selecione...</option>
+ 
+ 								<?php while($prod = mysql_fetch_array($query)) { ?>
+ 								<option value="<?php echo $prod['id'] ?>"><?php echo $prod['nome'] ?></option>
+ 								<?php } ?>
+							</select>
+                        </label>
+                    </div>
+                    <div class="form-row">
+                        <label>
+                            <span>CPF</span>
+                            <input type="text" name="text">
+                           
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <button type="submit">Entrar</button>
+                    </div>
+
+                </div>
+
+                <a href="#" class="form-forgotten-password">Esqueci minha senha &middot;</a>
+                <a href="#" class="form-create-an-account">Criar uma conta &rarr;</a>
+
+            </div>
+
+           
+        </form>
+
+    </div>
+
+</body>
+
+</html>
