@@ -33,11 +33,14 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+     
+        
+      
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Inicio<span class="sr-only">(current)</span></a>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Inicio</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="exames.html">Exames </a>
@@ -45,8 +48,8 @@
         <li class="nav-item">
           <a class="nav-link" href="medicos.html">Medicos</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="agendamentos.html">Meus Agendamentos</a>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Meus Agendamentos<span class="sr-only">(current)</span></a>
         </li>
       </ul>
     </div>
@@ -57,88 +60,49 @@
     </nav>
 
     <!-- Masthead -->
-    <header class="masthead text-white text-center">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-9 mx-auto">
-            <h1 class="mb-5">Agende suas consultas e exames com facilidade e conforto!</h1>
-          </div>
-          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-            <form>
-              <div class="form-row">
-                <div class="col-12 col-md-9 mb-2 mb-md-0">
-                  <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
-                </div>
-                <div class="col-12 col-md-3">
-                  <button type="submit" class="btn btn-block btn-lg btn-primary">Cadastre-se!</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
+    <header class="header-2 d-flex flex-column flex-md-row align-items-md-center p-5">
+      <div class="pt-md-3 pb-md-4">
+        <h3 class="display-5">Meus Agendamentos</h3>
+        <p class="lead">Veja todos os seu agendamentos marcados</p>
       </div>
     </header>
 
     <!-- Icons Grid -->
-    <section class="features-icons bg-light text-center">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-              <div class="features-icons-icon d-flex">
-                <i class="icon-screen-desktop m-auto text-primary"></i>
-              </div>
-              <h3>Agendar Consulta</h3>
-              <p class="lead mb-0">Escolha a especialidade, médico e horário da sua consulta.</p>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-              <div class="features-icons-icon d-flex">
-                <i class="icon-layers m-auto text-primary"></i>
-              </div>
-              <h3>Agendar Exames</h3>
-              <p class="lead mb-0">Escolha a especialidade, médico e horário do seu exame.</p>
-            </div>
-          </div>
-          <div class="col-lg-4">.
-            <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-              <div class="features-icons-icon d-flex">
-                <i class="icon-check m-auto text-primary"></i>
-              </div>
-              <h3>Consultar agendamentos</h3>
-              <p class="lead mb-0">Acompanhe e gerencie seus agendamentos</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section class="body-2 bg-light text-center">
+      
+      
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Cod.</th>
+            <th scope="col">Data</th>
+            <th scope="col">Medico</th>
+            <th scope="col">Especialidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>01/01/2001</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>01/01/2001</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>01/01/2001</td>
+            <td>Larry the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
 
-    
 
-    <!-- Call to Action -->
-    <section class="call-to-action text-white text-center">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-9 mx-auto">
-            <h2 class="mb-4">Ready to get started? Sign up now!</h2>
-          </div>
-          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-            <form>
-              <div class="form-row">
-                <div class="col-12 col-md-9 mb-2 mb-md-0">
-                  <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
-                </div>
-                <div class="col-12 col-md-3">
-                  <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- Footer -->
