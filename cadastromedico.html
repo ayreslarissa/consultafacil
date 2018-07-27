@@ -1,10 +1,8 @@
+<?php ("conn.php");	
+?>
+
 <!DOCTYPE html>
 <html>
-
-<?php
-require_once 'bdconection.php';
-$query = mysql_query("SELECT id,nome FROM especialidade");
-?>
 
 <head>
 
@@ -53,34 +51,42 @@ $query = mysql_query("SELECT id,nome FROM especialidade");
                             <input type="text" name="text">
                         </label>
                     </div>
-                    <div class="form-row">
-                        <label>
-                            <span>Especialidade</span>
-                            <select>
-                            	<option selected>Selecione...</option>
- 
- 								<?php while($prod = mysql_fetch_array($query)) { ?>
- 								<option value="<?php echo $prod['id'] ?>"><?php echo $prod['nome'] ?></option>
- 								<?php } ?>
-							</select>
-                        </label>
-                    </div>
+                    
                     <div class="form-row">
                         <label>
                             <span>CPF</span>
-                            <input type="text" name="text">
+                            <input type="text" name="cpf" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)">
                            
                         </label>
                     </div>
 
                     <div class="form-row">
-                        <button type="submit">Entrar</button>
+                        <label>
+                            <span>Especialidade</span>
+                            <select>
+								<option>Selecione...</option>
+								<?php 
+									$query = "SELECT * FROM especialidade";
+									$exec = mysql_query($query);
+									
+									while($prod = mysql_fetch_assoc($exec)) { ?>
+										<option value="'<?php echo $prod['id']; ?>'">
+											<?php echo $prod['nome']; ?>
+
+										</option> <?php 
+									} 
+								?>
+							</select>
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <button type="submit">Cadastrar</button>
                     </div>
 
                 </div>
 
-                <a href="#" class="form-forgotten-password">Esqueci minha senha &middot;</a>
-                <a href="#" class="form-create-an-account">Criar uma conta &rarr;</a>
+               
 
             </div>
 
@@ -92,3 +98,5 @@ $query = mysql_query("SELECT id,nome FROM especialidade");
 </body>
 
 </html>
+
+
