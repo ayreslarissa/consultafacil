@@ -39,7 +39,7 @@
         
       
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <section class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" href="index.html">Inicio</a>
@@ -51,10 +51,10 @@
           <a class="nav-link" href="#">Medicos<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="agendamentos.html">Meus Agendamentos</a>
+          <a class="nav-link" href="agendamentos.php">Meus Agendamentos</a>
         </li>
       </ul>
-    </div>
+    </section>
 
     <a class="btn btn-primary" href="login-index.html">Entrar</a>
 
@@ -63,15 +63,15 @@
 
     <!-- Masthead -->
     <header class="header-2 d-flex flex-column flex-md-row align-items-md-center p-5">
-      <div class="pt-md-3 pb-md-4">
+      <article class="pt-md-3 pb-md-4">
         <h1 class="bd-title mt-0">Medicos</h1>
         <p class="lead">Veja os medicos que atendem em nossa unidade</p>
-      </div>
+      </article>
     </header>
 
     <!-- Icons Grid -->
     <section class="body-2 bg-light text-center">
-      <div class="row justify-content-center">
+      <article class="row justify-content-center">
         <div class="col-sm-8">
           <table class="table table-hover table-sm">
             <thead>
@@ -92,7 +92,7 @@
                 <td><?= $medico['medico']?></td>
                 <td><?= $medico['especialidade']?></td>  
          
-                <td><button type="button" class="btn btn-primary">Marcar Consulta</button></td>
+                <td><a href="agendarconsulta.php" type="button" class="btn btn-primary" >Marcar Consulta</a></td>
            
                 
               </tr>
@@ -102,56 +102,20 @@
             </tbody>
           </table>
         </div>
-      </div>
+      </article>
       
 
     </section>
 
     <!-- Footer -->
     <footer class="footer bg-light">
-      <div class="container">
-        <div class="row">
+      <section class="container">
+        <article class="row">
           <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
-            <ul class="list-inline mb-2">
-              <li class="list-inline-item">
-                <a href="#">About</a>
-              </li>
-              <li class="list-inline-item">&sdot;</li>
-              <li class="list-inline-item">
-                <a href="#">Contact</a>
-              </li>
-              <li class="list-inline-item">&sdot;</li>
-              <li class="list-inline-item">
-                <a href="#">Terms of Use</a>
-              </li>
-              <li class="list-inline-item">&sdot;</li>
-              <li class="list-inline-item">
-                <a href="#">Privacy Policy</a>
-              </li>
-            </ul>
             <p class="text-muted small mb-4 mb-lg-0">&copy; Consulta Fácil 2018. All Rights Reserved.</p>
           </div>
-          <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
-            <ul class="list-inline mb-0">
-              <li class="list-inline-item mr-3">
-                <a href="#">
-                  <i class="fa fa-facebook fa-2x fa-fw"></i>
-                </a>
-              </li>
-              <li class="list-inline-item mr-3">
-                <a href="#">
-                  <i class="fa fa-twitter fa-2x fa-fw"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fa fa-instagram fa-2x fa-fw"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+        </article>
+    </section>
     </footer>
 
     <!-- Bootstrap core JavaScript -->
