@@ -36,10 +36,8 @@
           <span class="navbar-toggler-icon"></span>
         </button>
      
-        
-      
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <section class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" href="index.html">Inicio</a>
@@ -51,10 +49,10 @@
           <a class="nav-link" href="medicos.php">Medicos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="agendamentos.html">Meus Agendamentos</a>
+          <a class="nav-link" href="agendamentos.php">Meus Agendamentos</a>
         </li>
       </ul>
-    </div>
+    </section>
 
     <a class="btn btn-primary" href="login-index.html">Entrar</a>
 
@@ -63,98 +61,60 @@
 
     <!-- Masthead -->
     <header class="header-2 d-flex flex-column flex-md-row align-items-md-center p-5">
-      <div class="pt-md-3 pb-md-4">
+      <article class="pt-md-3 pb-md-4">
         <h1 class="bd-title mt-0">Exames</h1>
         <p class="lead">Veja todos os exames disponíveis</p>
-      </div>
+      </article>
     </header>
 
   
     <section class="body-2 bd-content bg-light text-center">
 
       
-      <div class="row justify-content-center">
+      <article class="row justify-content-center">
         <div class="col-md-8">
 		
-		
-		<table class="table table-hover table-sm">
-		<thead>
-              <tr>
-                <th scope="col">Exame</th>
-                <th scope="col">Médico</th>
-                <th scope="col">Especialidade</th>
-				<th scope="col">Valor</th>
-                <th scope="col"></th>
-              </tr>
-            </thead>
-			<?php
-			$usuarios = listaExames($conn);
-			foreach ($usuarios as $usuario):
-			?>
-			<tr>
-				<td><?= $usuario['exame'] ?></td>
-				<td><?= $usuario['nome']?></td>
-				<td><?= $usuario['valor']?></td>
-				<td><?= $usuario['especialidade']?></td>   
- 
-				<td><button type="button" class="btn btn-primary">Marcar Exame</button></td>
-   
-        
-			</tr>
-			<?php 
-			endforeach
-			?>
-		</table>
-		
-
-		
-          
+      		<table class="table table-hover table-sm">
+      		<thead>
+                    <tr>
+                      <th scope="col">Exame</th>
+                      <th scope="col">Médico</th>
+                      <th scope="col">Especialidade</th>
+      				<th scope="col">Valor</th>
+                      <th scope="col"></th>
+                    </tr>
+                  </thead>
+      			<?php
+      			$usuarios = listaExames($conn);
+      			foreach ($usuarios as $usuario):
+      			?>
+      			<tr>
+      				<td><?= $usuario['exame'] ?></td>
+      				<td><?= $usuario['nome']?></td>
+      				<td><?= $usuario['valor']?></td>
+      				<td><?= $usuario['especialidade']?></td>   
+       
+      				<td><button type="button" class="btn btn-primary">Marcar Exame</button></td>
+         
+              
+      			</tr>
+      			<?php 
+      			endforeach
+      			?>
+      		</table>
+		    </div>
+      </article>
+    </section>          
 
     <!-- Footer -->
     <footer class="footer bg-light">
-      <div class="container">
-        <div class="row">
+      <section class="container">
+        <article class="row">
           <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
-            <ul class="list-inline mb-2">
-              <li class="list-inline-item">
-                <a href="#">About</a>
-              </li>
-              <li class="list-inline-item">&sdot;</li>
-              <li class="list-inline-item">
-                <a href="#">Contact</a>
-              </li>
-              <li class="list-inline-item">&sdot;</li>
-              <li class="list-inline-item">
-                <a href="#">Terms of Use</a>
-              </li>
-              <li class="list-inline-item">&sdot;</li>
-              <li class="list-inline-item">
-                <a href="#">Privacy Policy</a>
-              </li>
-            </ul>
             <p class="text-muted small mb-4 mb-lg-0">&copy; Consulta Fácil 2018. All Rights Reserved.</p>
           </div>
-          <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
-            <ul class="list-inline mb-0">
-              <li class="list-inline-item mr-3">
-                <a href="#">
-                  <i class="fa fa-facebook fa-2x fa-fw"></i>
-                </a>
-              </li>
-              <li class="list-inline-item mr-3">
-                <a href="#">
-                  <i class="fa fa-twitter fa-2x fa-fw"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fa fa-instagram fa-2x fa-fw"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+        </article>
+    </section>
     </footer>
 
     <!-- Bootstrap core JavaScript -->

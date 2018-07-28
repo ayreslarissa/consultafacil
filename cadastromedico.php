@@ -1,17 +1,17 @@
 <?php 
 
-   	$con = mysql_connect("localhost","root","");
- 	$db = mysql_select_db("consultafacil_db",$con);
- 	$get=mysql_query("SELECT id, nome FROM especialidade ORDER BY id ASC");
-	$option = '';
- 	while($row = mysql_fetch_assoc($get))
-	{
-  		$option .= '<option value = "'.$row['id'].'">'.$row['nome'].'</option>';
-	}
+    $con = mysql_connect("localhost","root","");
+    $db = mysql_select_db("consultafacil_db",$con);
+    $get=mysql_query("SELECT id, nome FROM especialidade ORDER BY id ASC");
+    $option = '';
+    while($row = mysql_fetch_assoc($get))
+    {
+        $option .= '<option value = "'.$row['id'].'">'.$row['nome'].'</option>';
+    }
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="pt">
 
 
 <head>
@@ -31,12 +31,14 @@
 	
 	<header class="masthead text-white text-center">
       <div class="overlay"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-9 mx-auto">
-            <h1 class="mb-5">Área de cadastro de médicos</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                    <h1 class="mb-5">Área de cadastro de médicos</h1>
+                </div>
+            </div>
         </div>
-     </header>
+    </header>
 	
     <div class="main-content">
 
