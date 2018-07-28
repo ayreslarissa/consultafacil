@@ -48,7 +48,7 @@
           <a class="nav-link" href="#">Exames <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="medicos.html">Medicos</a>
+          <a class="nav-link" href="medicos.php">Medicos</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="agendamentos.html">Meus Agendamentos</a>

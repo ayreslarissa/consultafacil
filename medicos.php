@@ -1,3 +1,5 @@
+<?php include("conn.php")?>
+<?php include("medicos_dao.php")?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,11 +47,11 @@
         <li class="nav-item">
           <a class="nav-link" href="exames.php">Exames </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="medicos.php">Medicos</a>
-        </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#">Meus Agendamentos<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#">Medicos<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="agendamentos.html">Meus Agendamentos</a>
         </li>
       </ul>
     </div>
@@ -62,46 +64,46 @@
     <!-- Masthead -->
     <header class="header-2 d-flex flex-column flex-md-row align-items-md-center p-5">
       <div class="pt-md-3 pb-md-4">
-        <h3 class="display-5">Meus Agendamentos</h3>
-        <p class="lead">Veja todos os seu agendamentos marcados</p>
+        <h1 class="bd-title mt-0">Medicos</h1>
+        <p class="lead">Veja os medicos que atendem em nossa unidade</p>
       </div>
     </header>
 
     <!-- Icons Grid -->
     <section class="body-2 bg-light text-center">
+      <div class="row justify-content-center">
+        <div class="col-sm-8">
+          <table class="table table-hover table-sm">
+            <thead>
+              <tr>
+                <th scope="col">CRM</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Especialidade</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+              $medicos = listaMedicos($conn);
+              foreach ($medicos as $medico):
+              ?>
+              <tr>
+                <td><?= $medico['crm'] ?></td>
+                <td><?= $medico['medico']?></td>
+                <td><?= $medico['especialidade']?></td>  
+         
+                <td><button type="button" class="btn btn-primary">Marcar Consulta</button></td>
+           
+                
+              </tr>
+              <?php 
+              endforeach
+              ?>
+            </tbody>
+          </table>
+        </div>
+      </div>
       
-      
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">Cod.</th>
-            <th scope="col">Data</th>
-            <th scope="col">Medico</th>
-            <th scope="col">Especialidade</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>01/01/2001</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>01/01/2001</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>01/01/2001</td>
-            <td>Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
-
 
     </section>
 
