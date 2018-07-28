@@ -1,3 +1,5 @@
+<?php include("conn.php")?>
+<?php include("exame_dao.php")?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,11 +44,11 @@
         <li class="nav-item">
           <a class="nav-link" href="index.html">Inicio</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="exames.php">Exames </a>
-        </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#">Medicos<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#">Exames <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="medicos.php">Medicos</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="agendamentos.html">Meus Agendamentos</a>
@@ -62,50 +64,51 @@
     <!-- Masthead -->
     <header class="header-2 d-flex flex-column flex-md-row align-items-md-center p-5">
       <div class="pt-md-3 pb-md-4">
-        <h1 class="bd-title mt-0">Medicos</h1>
-        <p class="lead">Veja os medicos que atendem em nossa unidade</p>
+        <h1 class="bd-title mt-0">Exames</h1>
+        <p class="lead">Veja todos os exames disponíveis</p>
       </div>
     </header>
 
-    <!-- Icons Grid -->
-    <section class="body-2 bg-light text-center">
+  
+    <section class="body-2 bd-content bg-light text-center">
+
+      
       <div class="row justify-content-center">
-        <div class="col-sm-8">
-          <table class="table table-hover table-sm">
-            <thead>
+        <div class="col-md-8">
+		
+		
+		<table class="table table-hover table-sm">
+		<thead>
               <tr>
-                <th scope="col">CRM</th>
-                <th scope="col">Nome</th>
+                <th scope="col">Exame</th>
+                <th scope="col">Médico</th>
                 <th scope="col">Especialidade</th>
+				<th scope="col">Valor</th>
                 <th scope="col"></th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Otto</td>
-                <td>Oftalmologia</td>
-                <td><button type="button" class="btn btn-sm btn-outline-success">Marcar Consulta</button></td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Thornton</td>
-                <td>Cardiologia</td>
-                <td><button type="button" class="btn btn-sm btn-outline-success">Marcar Consulta</button></td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry the Bird</td>
-                <td>Oftalmologia</td>
-                <td><button type="button" class="btn btn-sm btn-outline-success">Marcar Consulta</button></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      
+			<?php
+			$usuarios = listaExames($conn);
+			foreach ($usuarios as $usuario):
+			?>
+			<tr>
+				<td><?= $usuario['exame'] ?></td>
+				<td><?= $usuario['nome']?></td>
+				<td><?= $usuario['valor']?></td>
+				<td><?= $usuario['especialidade']?></td>   
+ 
+				<td><button type="button" class="btn btn-primary">Marcar Exame</button></td>
+   
+        
+			</tr>
+			<?php 
+			endforeach
+			?>
+		</table>
+		
 
-    </section>
+		
+          
 
     <!-- Footer -->
     <footer class="footer bg-light">

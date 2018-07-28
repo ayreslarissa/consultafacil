@@ -1,3 +1,5 @@
+<?php include("conn.php")?>
+<?php include("medicos_dao.php")?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -81,24 +83,22 @@
               </tr>
             </thead>
             <tbody>
+              <?php
+              $medicos = listaMedicos($conn);
+              foreach ($medicos as $medico):
+              ?>
               <tr>
-                <th scope="row">1</th>
-                <td>Otto</td>
-                <td>Oftalmologia</td>
-                <td><button type="button" class="btn btn-sm btn-outline-success">Marcar Consulta</button></td>
+                <td><?= $medico['crm'] ?></td>
+                <td><?= $medico['medico']?></td>
+                <td><?= $medico['especialidade']?></td>  
+         
+                <td><button type="button" class="btn btn-primary">Marcar Consulta</button></td>
+           
+                
               </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Thornton</td>
-                <td>Cardiologia</td>
-                <td><button type="button" class="btn btn-sm btn-outline-success">Marcar Consulta</button></td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry the Bird</td>
-                <td>Oftalmologia</td>
-                <td><button type="button" class="btn btn-sm btn-outline-success">Marcar Consulta</button></td>
-              </tr>
+              <?php 
+              endforeach
+              ?>
             </tbody>
           </table>
         </div>
